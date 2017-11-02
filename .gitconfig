@@ -1,0 +1,15 @@
+[user]
+	name=Karolis Grinkevicius
+	email=k.grinkevicius@gmail.com
+[core]
+	editor=/usr/bin/vim
+[credential]
+	helper=osxkeychain
+[alias]
+	ready=!git checkout master && git pull && git checkout - && git rebase master
+	distance=!git rev-list origin/master.. --count
+	squash=!git rebase --interactive HEAD~`git rev-list origin/master.. --count`
+[color]
+	ui = auto
+[pull]
+	rebase = true
