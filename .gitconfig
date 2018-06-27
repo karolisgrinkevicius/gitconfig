@@ -1,5 +1,5 @@
 [user]
-	name=Karolis Grinkevicius
+	name=Karolis Grinkevičius
 	email=k.grinkevicius@gmail.com
 [core]
 	editor=/usr/bin/vim
@@ -9,6 +9,8 @@
 	ready=!git checkout master && git pull && git checkout - && git rebase master
 	distance=!git rev-list origin/master.. --count
 	squash=!git rebase --interactive HEAD~`git rev-list origin/master.. --count`
+	cmp = "!f() { git add -A && git commit -m \"$@\" --no-verify && git push -f --no-verify origin HEAD; }; f"
+	cbr = "!f() { git checkout master && git branch -D \"$1\" && git checkout \"$1\"; }; f"
 [color]
 	ui = auto
 [pull]
