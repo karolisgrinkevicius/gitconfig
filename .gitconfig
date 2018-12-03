@@ -2,16 +2,31 @@
 	name=Karolis Grinkevičius
 	email=k.grinkevicius@gmail.com
 [core]
-	editor=/usr/bin/vim
+	editor=/usr/local/bin/vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
 	helper=osxkeychain
 [alias]
 	ready=!git checkout master && git pull && git checkout - && git rebase master
-	distance=!git rev-list origin/master.. --count
+        distance=!git rev-list origin/master.. --count
 	squash=!git rebase --interactive HEAD~`git rev-list origin/master.. --count`
 	cmp = "!f() { git add -A && git commit -m \"$@\" --no-verify && git push -f --no-verify origin HEAD; }; f"
-	cbr = "!f() { git checkout master && git branch -D \"$1\" && git checkout \"$1\"; }; f"
+	cbr = "!f() { git checkout master && git fetch && git branch -D \"$1\" && git checkout \"$1\"; }; f"
+	master = !git checkout master && git pull origin
 [color]
-	ui = auto
+	ui = true
 [pull]
 	rebase = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
