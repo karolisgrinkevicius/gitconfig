@@ -16,6 +16,7 @@
 - `cmp` - Commit and push using only one command. Requires commit message right after the alias command. Ignores hooks.
 - `cbr` - Checkout origin branch removing the local one.
 - `master` - Checkout master and pull changes from the remote
+- `gbr` - Remove all local branches
 
 ## Pull
 
