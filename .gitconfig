@@ -13,6 +13,7 @@
 	cmp = "!f() { git add -A && git commit -m \"$@\" --no-verify && git push -f --no-verify origin HEAD; }; f"
 	cbr = "!f() { git checkout master && git fetch && git branch -D \"$1\" && git checkout \"$1\"; }; f"
 	master = !git checkout master && git pull origin
+	gbr=!git branch | grep -v "master" | xargs git branch -D
 [color]
 	ui = true
 [pull]
